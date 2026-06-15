@@ -1,0 +1,63 @@
+{
+  "site": {
+    "name": "Norma Proje"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "projects": "Projeler",
+    "contact": "İletişim",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat"
+  },
+  "hero": {
+    "title": "Geleceği bugünden",
+    "titleAccent": "inşa ediyoruz",
+    "subtitle": "Fikirden anahtar teslimine — her aşamada standardı belirleyen mühendislik.",
+    "ctaPrimary": "Projelerimiz",
+    "ctaSecondary": "İletişime geçin",
+    "scroll": "Keşfet"
+  },
+  "about": {
+    "kicker": "01 — Hakkımızda",
+    "title": "Standartları yeniden tanımlayan bir inşaat anlayışı",
+    "lead": "Norma Proje, mimari tasarımdan anahtar teslim uygulamaya kadar her aşamada mühendislik disiplinini ve estetiği bir araya getirir. Ankara merkezli ekibimiz her projeye ölçülebilir kalite ve şeffaf süreçle yaklaşır."
+  },
+  "services": {
+    "kicker": "02 — Hizmetler",
+    "title": "Uçtan uca inşaat çözümleri"
+  },
+  "projects": {
+    "kicker": "03 — Projeler",
+    "title": "Hayata geçirdiğimiz projeler",
+    "categories": {
+      "all": "Tümü",
+      "residential": "Konut",
+      "commercial": "Ticari",
+      "industrial": "Endüstriyel",
+      "public": "Kamu"
+    }
+  },
+  "footer": {
+    "tagline": "Mimari tasarımdan anahtar teslime, mühendislik disipliniyle inşa ediyoruz.",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "contact": {
+    "kicker": "04 — İletişim",
+    "title": "Bir sonraki projeyi birlikte inşa edelim",
+    "form": {
+      "name": "Ad Soyad",
+      "email": "E-posta",
+      "phone": "Telefon (opsiyonel)",
+      "message": "Mesaj",
+      "submit": "Gönder",
+      "success": "Mesajınız alındı. En kısa sürede size dönüş yapacağız.",
+      "errors": {
+        "name": "Lütfen adınızı ve soyadınızı girin.",
+        "email": "Lütfen geçerli bir e-posta adresi girin.",
+        "message": "Lütfen bir mesaj yazın."
+      }
+    }
+  }
+}

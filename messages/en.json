@@ -1,0 +1,63 @@
+{
+  "site": {
+    "name": "Norma Proje"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "title": "Building what's",
+    "titleAccent": "next",
+    "subtitle": "From concept to delivery — engineering that sets the standard at every stage.",
+    "ctaPrimary": "Our projects",
+    "ctaSecondary": "Get in touch",
+    "scroll": "Explore"
+  },
+  "about": {
+    "kicker": "01 — About",
+    "title": "A construction philosophy that redefines the standard",
+    "lead": "Norma Proje brings together engineering discipline and aesthetics at every stage, from architectural design to turnkey delivery. Our Ankara-based team approaches every project with measurable quality and a transparent process."
+  },
+  "services": {
+    "kicker": "02 — Services",
+    "title": "End-to-end construction solutions"
+  },
+  "projects": {
+    "kicker": "03 — Projects",
+    "title": "Projects we've delivered",
+    "categories": {
+      "all": "All",
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "industrial": "Industrial",
+      "public": "Public"
+    }
+  },
+  "footer": {
+    "tagline": "From architecture to turnkey delivery, built with engineering discipline.",
+    "rights": "All rights reserved."
+  },
+  "contact": {
+    "kicker": "04 — Contact",
+    "title": "Let's build your next project together",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "message": "Message",
+      "submit": "Send",
+      "success": "Your message has been received. We'll get back to you shortly.",
+      "errors": {
+        "name": "Please enter your full name.",
+        "email": "Please enter a valid email address.",
+        "message": "Please write a message."
+      }
+    }
+  }
+}
