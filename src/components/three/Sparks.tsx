@@ -2,7 +2,7 @@
 
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import * as THREE from "three";
+import { AdditiveBlending, BufferAttribute, Color, MathUtils, Points } from "three";
 
 const BOUNDS = {
   x: 18,
@@ -18,24 +18,24 @@ type SparksProps = {
 };
 
 export default function Sparks({ count, frozen }: SparksProps) {
-  const pointsRef = useRef<THREE.Points>(null);
+  const pointsRef = useRef<Points>(null);
 
   const { positions, colors, speeds } = useMemo(() => {
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
     const speeds = new Float32Array(count);
 
-    const azure = new THREE.Color("#4D7CFF");
-    const white = new THREE.Color("#FFFFFF");
+    const azure = new Color("#4D7CFF");
+    const white = new Color("#FFFFFF");
 
     for (let i = 0; i < count; i++) {
       positions[i * 3] = (Math.random() - 0.5) * BOUNDS.x * 2;
-      positions[i * 3 + 1] = THREE.MathUtils.lerp(
+      positions[i * 3 + 1] = MathUtils.lerp(
         BOUNDS.yMin,
         BOUNDS.yMax,
         Math.random()
       );
-      positions[i * 3 + 2] = THREE.MathUtils.lerp(
+      positions[i * 3 + 2] = MathUtils.lerp(
         BOUNDS.zMin,
         BOUNDS.zMax,
         Math.random()
@@ -56,7 +56,7 @@ export default function Sparks({ count, frozen }: SparksProps) {
     if (frozen || !pointsRef.current) return;
 
     const posAttr = pointsRef.current.geometry.attributes
-      .position as THREE.BufferAttribute;
+      .position as BufferAttribute;
     const array = posAttr.array as Float32Array;
 
     for (let i = 0; i < count; i++) {
@@ -82,7 +82,7 @@ export default function Sparks({ count, frozen }: SparksProps) {
         transparent
         opacity={0.85}
         depthWrite={false}
-        blending={THREE.AdditiveBlending}
+        blending={AdditiveBlending}
         fog
       />
     </points>

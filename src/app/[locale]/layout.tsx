@@ -12,16 +12,19 @@ const BASE_URL = "https://normaproje.com";
 const fontDisplay = Space_Grotesk({
   variable: "--font-display",
   subsets: ["latin", "latin-ext"],
+  display: "swap",
 });
 
 const fontSans = Inter({
   variable: "--font-sans",
   subsets: ["latin", "latin-ext"],
+  display: "swap",
 });
 
 const fontMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin", "latin-ext"],
+  display: "swap",
 });
 
 export async function generateMetadata({

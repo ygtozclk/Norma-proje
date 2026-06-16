@@ -2,7 +2,7 @@
 
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import * as THREE from "three";
+import { Color, DoubleSide, ShaderMaterial } from "three";
 
 const vertexShader = /* glsl */ `
   uniform float uTime;
@@ -58,15 +58,15 @@ type WaveFieldProps = {
 };
 
 export default function WaveField({ segments, frozen }: WaveFieldProps) {
-  const materialRef = useRef<THREE.ShaderMaterial>(null);
+  const materialRef = useRef<ShaderMaterial>(null);
 
   const uniforms = useMemo(
     () => ({
       uTime: { value: 0 },
       uAmp: { value: 1 },
       uSpeed: { value: 1 },
-      uColor: { value: new THREE.Color("#4D7CFF") },
-      uFogColor: { value: new THREE.Color("#0A0B0D") },
+      uColor: { value: new Color("#4D7CFF") },
+      uFogColor: { value: new Color("#0A0B0D") },
       uFogNear: { value: 12 },
       uFogFar: { value: 45 },
     }),
@@ -89,7 +89,7 @@ export default function WaveField({ segments, frozen }: WaveFieldProps) {
         wireframe
         transparent
         depthWrite={false}
-        side={THREE.DoubleSide}
+        side={DoubleSide}
       />
     </mesh>
   );

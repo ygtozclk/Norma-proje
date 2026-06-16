@@ -30,7 +30,11 @@ export default function Hero() {
 
   return (
     <section ref={sectionRef} className="relative flex min-h-screen flex-col overflow-hidden">
-      <div className="absolute inset-0 -z-10 pointer-events-none" aria-hidden="true">
+      <div
+        className="absolute inset-0 -z-10 pointer-events-none"
+        aria-hidden="true"
+        style={{ contentVisibility: "auto" }}
+      >
         <LazyHeroScene />
       </div>
 
