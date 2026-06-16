@@ -1,8 +1,7 @@
 "use client";
 
-import { useMemo, useRef } from "react";
-import { useFrame } from "@react-three/fiber";
-import { Color, DoubleSide, ShaderMaterial } from "three";
+import { useMemo } from "react";
+import { Color, DoubleSide } from "three";
 
 const vertexShader = /* glsl */ `
   uniform float uTime;
@@ -54,15 +53,12 @@ const fragmentShader = /* glsl */ `
 
 type WaveFieldProps = {
   segments: number;
-  frozen: boolean;
 };
 
-export default function WaveField({ segments, frozen }: WaveFieldProps) {
-  const materialRef = useRef<ShaderMaterial>(null);
-
+export default function WaveField({ segments }: WaveFieldProps) {
   const uniforms = useMemo(
     () => ({
-      uTime: { value: 0 },
+      uTime: { value: 1.8 },
       uAmp: { value: 1 },
       uSpeed: { value: 1 },
       uColor: { value: new Color("#4D7CFF") },
@@ -73,16 +69,10 @@ export default function WaveField({ segments, frozen }: WaveFieldProps) {
     []
   );
 
-  useFrame((state) => {
-    if (frozen || !materialRef.current) return;
-    materialRef.current.uniforms.uTime.value = state.clock.elapsedTime;
-  });
-
   return (
     <mesh rotation={[-Math.PI / 2.6, 0, 0]} position={[0, -3, -10]}>
       <planeGeometry args={[60, 60, segments, segments]} />
       <shaderMaterial
-        ref={materialRef}
         uniforms={uniforms}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
