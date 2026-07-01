@@ -14,7 +14,7 @@ type HeroSceneProps = {
   onReady?: () => void;
 };
 
-export default function HeroScene({ isMobile, onReady }: HeroSceneProps) {
+export default function HeroScene({ isMobile, inView, onReady }: HeroSceneProps) {
   const segments = isMobile ? 70 : 96;
   const sparkCount = isMobile ? 90 : 220;
 
@@ -22,7 +22,7 @@ export default function HeroScene({ isMobile, onReady }: HeroSceneProps) {
     <Canvas
       camera={{ position: [0, 1.2, 6], fov: 45 }}
       dpr={[1, 1.5]}
-      frameloop="demand"
+      frameloop="always"
       gl={{ antialias: false, powerPreference: "high-performance" }}
       performance={{ min: 0.5 }}
       onCreated={() => {
@@ -32,8 +32,8 @@ export default function HeroScene({ isMobile, onReady }: HeroSceneProps) {
       <AdaptiveDpr pixelated={false} />
       <color attach="background" args={["#0A0B0D"]} />
       <fog attach="fog" args={["#0A0B0D", 12, 45]} />
-      <WaveField segments={segments} />
-      <Sparks count={sparkCount} frozen={true} />
+      <WaveField segments={segments} inView={inView} />
+      <Sparks count={sparkCount} frozen={!inView} />
       {!isMobile && (
         <EffectComposer>
           <Bloom
